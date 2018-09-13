@@ -122,9 +122,22 @@ let validateEducationInput = function (data) {
   };
 };
 
+let validatePostInput = function (data) {
+  let errors = {};
+  data.text = isEmpty(data.text) ? '' : data.text;
+  if (validator.isEmpty(data.text)) {
+    errors.text = 'text  is required';
+  }
+  return {
+    errors,
+    isValid: isEmpty(errors)
+  };
+};
+
 module.exports = {
   validateRegisterInput,
   validateLoginInput,
   validateProfileInput,
   validateExperienceInput,
-validateEducationInput};
+  validateEducationInput,
+validatePostInput};

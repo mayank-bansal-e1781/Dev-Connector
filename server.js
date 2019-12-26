@@ -4,8 +4,10 @@ const express = require('express');
 var app = express();
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000;
-
+const port = process.env.PORT || 5000;
+var cors = require('cors')
+var app = express() 
+app.use(cors())
 // importing middlewares
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
